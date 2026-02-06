@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator IPK Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header>
+                <h1>Kalkulator IPK Mahasiswa</h1>
+                <p>Masukkan mata kuliah Anda untuk menghitung IPK secara otomatis.</p>
+            </header>
+            <main>
+                <form id="courseForm">
+                    <label for="courseName">Nama Mata Kuliah:</label>
+                    <input type="text" id="courseName" required>
+                    
+                    <label for="sks">Jumlah SKS:</label>
+                    <input type="number" id="sks" min="1" max="10" required>
+                    
+                    <label for="grade">Nilai:</label>
+                    <select id="grade" required>
+                        <option value="">Pilih Nilai</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                    
+                    <button type="submit" class="btn primary">Tambah Mata Kuliah</button>
+                </form>
+                
+                <div class="ipk-display">
+                    <h2>IPK Anda: <span id="ipkValue">0.00</span></h2>
+                </div>
+                
+                <table id="courseTable">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>SKS</th>
+                            <th>Nilai</th>
+                            <th>Bobot</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Rows will be populated by JS -->
+                    </tbody>
+                </table>
+                
+                <button id="resetBtn" class="btn danger">Reset Data</button>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
